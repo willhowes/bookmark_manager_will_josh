@@ -1,4 +1,5 @@
 require_relative './setup_test_database'
+require_relative '../lib/database_connection'
 
 # Set the environment to "test"
 ENV['RACK_ENV'] = 'test'
