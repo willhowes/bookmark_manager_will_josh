@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/bookmark'
+require './lib/comment'
 require './lib/database_connection_setup'
 require 'uri'
 require 'sinatra/flash'
@@ -23,7 +24,7 @@ class BookmarkManager < Sinatra::Base
     redirect '/'
   end
 
-  delete '/bookmarks/:id' do
+  delete '/:id' do
     Bookmark.delete(id: params[:id])
     redirect '/'
   end
@@ -36,6 +37,16 @@ class BookmarkManager < Sinatra::Base
   patch '/:id' do
     Bookmark.update(id: params[:id], title: params[:title], url: params[:url])
     redirect('/')
+  end
+
+  get '/bookmarks/:id/comments/new' do
+    @bookmark_id = params[:id]
+    erb :'comments/new'
+  end
+
+  post '/bookmarks/:id/comments' do
+    Comment.create(bookmark_id: params[:id], text: params[:comment])
+    redirect '/'
   end
 
   run! if app_file == $0
