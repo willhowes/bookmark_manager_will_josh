@@ -40,6 +40,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         1,
         1,
@@ -118,6 +123,15 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/student/Projects/bookmark_manager/spec/features/deleting_a_bookmark_spec.rb": [
@@ -192,6 +206,6 @@
         null
       ]
     },
-    "timestamp": 1563456767
+    "timestamp": 1563458146
   }
 }
